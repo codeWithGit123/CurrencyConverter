@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="curr.png" type="image/x-icon">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Welcome</h1>
+    <div class="timg">Web Currency Converter</div>
+    <div class="box">
+        <div class="b1">
+            <h4>From</h4>
+            <div class="cont">
+                <img src="https://flagsapi.com/BE/flat/64.png">
+                <select name="from" id="from" class="opt"></select>
+            </div>
+            <input type="number" id="inp">
+        </div>
+        <div class="swap-icon">
+            <i class="fas fa-exchange-alt"></i>
+        </div>
+        <div class="b2">
+            <h4>To</h4>
+            <div class="cont">
+                <img src="https://flagsapi.com/BE/flat/64.png">
+                <select name="to" id="to" class="opt"></select>
+            </div>
+            <input type="number" id="res">
+        </div>
+    </div>
+    <footer>
+        <p>&copy; <span id="year"></span> Md. Abdur Rahman All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

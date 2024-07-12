@@ -1,0 +1,122 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body Styles */
+body {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+/* Heading Styles */
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.timg {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+.cont img{
+    width: 2rem;
+}
+.cont
+{
+    display: flex;
+}
+
+/* Box Styles */
+.box {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; /* Center items vertically */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.box div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+}
+
+
+h4 {
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+/* Input and Select Styles */
+input, select {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #333;
+}
+
+/* Select Styles */
+select.opt {
+    -webkit-appearance: menulist-button;
+    -moz-appearance: menulist-button;
+    appearance: menulist-button;
+    background: white;
+    color: #333;
+    padding-right: 20px; /* Space for the dropdown arrow */
+    cursor: pointer;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .box {
+        flex-direction: column;
+    }
+
+    .box div {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .swap-icon {
+        margin: 20px 0;
+        transform: rotate(90deg);
+    }
+}
+/* Footer Styles */
+footer {
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+    color: #ffffff; /* White text */
+    text-align: center; /* Centered text */
+    padding: 10px 0; /* Padding for space */
+    position: fixed; /* Fixed position at the bottom */
+    width: 100%; /* Full width */
+    bottom: 0; /* Stick to the bottom */
+    font-size: 1rem; /* Font size */
+}
+
+footer p {
+    margin: 0; /* Remove default margin */
+    font-family: 'Poppins', sans-serif; /* Use Poppins font */
+}
