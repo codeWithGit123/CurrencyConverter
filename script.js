@@ -1,190 +1,29 @@
-var cr;
-
-const countryList = {
-    AED: "AE",
-    AFN: "AF",
-    XCD: "AG",
-    ALL: "AL",
-    AMD: "AM",
-    ANG: "AN",
-    AOA: "AO",
-    AQD: "AQ",
-    ARS: "AR",
-    AUD: "AU",
-    AZN: "AZ",
-    BAM: "BA",
-    BBD: "BB",
-    BDT: "BD",
-    XOF: "BE",
-    BGN: "BG",
-    BHD: "BH",
-    BIF: "BI",
-    BMD: "BM",
-    BND: "BN",
-    BOB: "BO",
-    BRL: "BR",
-    BSD: "BS",
-    NOK: "BV",
-    BWP: "BW",
-    BYR: "BY",
-    BZD: "BZ",
-    CAD: "CA",
-    CDF: "CD",
-    XAF: "CF",
-    CHF: "CH",
-    CLP: "CL",
-    CNY: "CN",
-    COP: "CO",
-    CRC: "CR",
-    CUP: "CU",
-    CVE: "CV",
-    CYP: "CY",
-    CZK: "CZ",
-    DJF: "DJ",
-    DKK: "DK",
-    DOP: "DO",
-    DZD: "DZ",
-    ECS: "EC",
-    EEK: "EE",
-    EGP: "EG",
-    ETB: "ET",
-    EUR: "FR",
-    FJD: "FJ",
-    FKP: "FK",
-    GBP: "GB",
-    GEL: "GE",
-    GGP: "GG",
-    GHS: "GH",
-    GIP: "GI",
-    GMD: "GM",
-    GNF: "GN",
-    GTQ: "GT",
-    GYD: "GY",
-    HKD: "HK",
-    HNL: "HN",
-    HRK: "HR",
-    HTG: "HT",
-    HUF: "HU",
-    IDR: "ID",
-    ILS: "IL",
-    INR: "IN",
-    IQD: "IQ",
-    IRR: "IR",
-    ISK: "IS",
-    JMD: "JM",
-    JOD: "JO",
-    JPY: "JP",
-    KES: "KE",
-    KGS: "KG",
-    KHR: "KH",
-    KMF: "KM",
-    KPW: "KP",
-    KRW: "KR",
-    KWD: "KW",
-    KYD: "KY",
-    KZT: "KZ",
-    LAK: "LA",
-    LBP: "LB",
-    LKR: "LK",
-    LRD: "LR",
-    LSL: "LS",
-    LTL: "LT",
-    LVL: "LV",
-    LYD: "LY",
-    MAD: "MA",
-    MDL: "MD",
-    MGA: "MG",
-    MKD: "MK",
-    MMK: "MM",
-    MNT: "MN",
-    MOP: "MO",
-    MRO: "MR",
-    MTL: "MT",
-    MUR: "MU",
-    MVR: "MV",
-    MWK: "MW",
-    MXN: "MX",
-    MYR: "MY",
-    MZN: "MZ",
-    NAD: "NA",
-    XPF: "NC",
-    NGN: "NG",
-    NIO: "NI",
-    NPR: "NP",
-    NZD: "NZ",
-    OMR: "OM",
-    PAB: "PA",
-    PEN: "PE",
-    PGK: "PG",
-    PHP: "PH",
-    PKR: "PK",
-    PLN: "PL",
-    PYG: "PY",
-    QAR: "QA",
-    RON: "RO",
-    RSD: "RS",
-    RUB: "RU",
-    RWF: "RW",
-    SAR: "SA",
-    SBD: "SB",
-    SCR: "SC",
-    SDG: "SD",
-    SEK: "SE",
-    SGD: "SG",
-    SKK: "SK",
-    SLL: "SL",
-    SOS: "SO",
-    SRD: "SR",
-    STD: "ST",
-    SVC: "SV",
-    SYP: "SY",
-    SZL: "SZ",
-    THB: "TH",
-    TJS: "TJ",
-    TMT: "TM",
-    TND: "TN",
-    TOP: "TO",
-    TRY: "TR",
-    TTD: "TT",
-    TWD: "TW",
-    TZS: "TZ",
-    UAH: "UA",
-    UGX: "UG",
-    USD: "US",
-    UYU: "UY",
-    UZS: "UZ",
-    VEF: "VE",
-    VND: "VN",
-    VUV: "VU",
-    YER: "YE",
-    ZAR: "ZA",
-    ZMK: "ZM",
-    ZWD: "ZW",
-  };
-
 let farr = document.getElementsByClassName('opt');
+//accessing the select tag
+
+//inside those tag adding option tag with value and options
 for (let i = 0; i < farr.length; i++) {
     for (k in countryList) {
         farr[i].innerHTML += `<option value='${k}'>${k}</option>`
     }
+    //on both the select tags adding an eventlistener of change so that the flag icon changes accordingly
     farr[i].addEventListener("change",(e)=>{
-        console.log(e,e.target)
-        updateFlage(e.target)
+        updateFlage(e.target) //updating the icon
+        //here e is target element in this case it is select tag
     })
 }
 
 
 function updateFlage(e){
-    let curcode = e.value;
-    console.log(curcode)
-    let c = countryList[curcode]
-    console.log(c)
-    let nsrc = `https://flagsapi.com/${c}/flat/64.png`
+    let curcode = e.value; //accessing the value of the target
+    let c = countryList[curcode] //accessing the code for flag icon
+    let nsrc = `https://flagsapi.com/${c}/flat/64.png`//flag icon
     let i = e.parentElement.querySelector('img')
     i.src = nsrc
 }
 
 document.getElementById('inp').addEventListener('input', () => {
+    console.log('in inp')
     var f = document.getElementById('from').value;
     var t = document.getElementById('to').value;
     var n = document.getElementById('inp').value;
@@ -204,8 +43,8 @@ document.getElementById('inp').addEventListener('input', () => {
 })
 
 document.getElementById('res').addEventListener('input', () => {
+    console.log('in res')
     var f = document.getElementById('from').value;
-    var t = document.getElementById('to').value;
     var r = document.getElementById('res').value;
     if (r == '')
         document.getElementById('inp').value = '';
@@ -216,10 +55,11 @@ document.getElementById('res').addEventListener('input', () => {
                 return res.json()
             })
             .then(data => {
-                document.getElementById('inp').value = data.conversion_rates[t] * r;
+                document.getElementById('inp').value = data.conversion_rates[f] * r;
             })
             .catch(err => console.log(err))
     }
 })
-// Set the current year in the footer
+
+
 document.getElementById('year').textContent = new Date().getFullYear();
