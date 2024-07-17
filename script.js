@@ -23,7 +23,6 @@ function updateFlage(e){
 }
 
 document.getElementById('inp').addEventListener('input', () => {
-    console.log('in inp')
     var f = document.getElementById('from').value;
     var t = document.getElementById('to').value;
     var n = document.getElementById('inp').value;
@@ -43,8 +42,8 @@ document.getElementById('inp').addEventListener('input', () => {
 })
 
 document.getElementById('res').addEventListener('input', () => {
-    console.log('in res')
     var f = document.getElementById('from').value;
+    var t = document.getElementById('to').value;
     var r = document.getElementById('res').value;
     if (r == '')
         document.getElementById('inp').value = '';
@@ -55,7 +54,8 @@ document.getElementById('res').addEventListener('input', () => {
                 return res.json()
             })
             .then(data => {
-                document.getElementById('inp').value = data.conversion_rates[f] * r;
+                console.log(data.conversion_rates[t])
+                document.getElementById('inp').value = data.conversion_rates[t] * r;
             })
             .catch(err => console.log(err))
     }
