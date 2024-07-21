@@ -54,8 +54,7 @@ document.getElementById('res').addEventListener('input', () => {
                 return res.json()
             })
             .then(data => {
-                console.log(data.conversion_rates[t])
-                document.getElementById('inp').value = data.conversion_rates[t] * r;
+                document.getElementById('inp').value = data.conversion_rates[f] * r;
             })
             .catch(err => console.log(err))
     }
