@@ -48,7 +48,7 @@ document.getElementById('res').addEventListener('input', () => {
     if (r == '')
         document.getElementById('inp').value = '';
     else {
-        fetch(`https://v6.exchangerate-api.com/v6/58a6f91afd412435e54792c6/latest/${f}`)
+        fetch(`https://v6.exchangerate-api.com/v6/58a6f91afd412435e54792c6/latest/${t}`)
             .then(res => {
                 if (!res.ok) throw new Error('Request Declined')
                 return res.json()
